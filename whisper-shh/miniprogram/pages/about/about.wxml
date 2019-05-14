@@ -1,2 +1,18 @@
 <!--pages/About/about.wxml-->
-<text>pages/About/about.wxml</text>
+<view class='about-head'>
+  <image src='/images/logo-circle.png' class='about-logo'></image>
+  <view><text class='about-title'>Whisper Shh</text></view>
+  <view><text class='about-text'>Version 1.0</text></view>
+</view>
+<view class='about-content'>
+  <view><text class='about-title'>Developer</text></view>
+  <view><text class='developer-group'>FrontEnd</text></view>
+  <view><text class='developer'>Yitong Qi</text></view>
+  <view><text class='developer'>Jinan Chen</text></view>
+  <view><text class='developer-group'>BackEnd</text></view>
+  <view><text class='developer'>Jiahao Liang</text></view>
+  <view><text class='developer'>Zicheng Liu</text></view>
+  <view><text class='developer'>Yujie Peng</text></view>
+  <view><text class='developer-group'>Testing</text></view>
+  <view><text class='developer'>Yuhao Sun</text></view>
+</view>

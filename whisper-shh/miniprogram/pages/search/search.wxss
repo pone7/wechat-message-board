@@ -1,111 +1,11 @@
 page{
   background-color: #f0f0f0
 }
-.swiper-tab{  
-  background-color: #fff;
-  width: 100%;  
-  border-bottom: 2rpx solid #777777;  
-  text-align: center;  
-  line-height: 80rpx;
-}  
-.swiper-tab-list{  
-  font-size: 35rpx;  
-  display: inline-block;  
-  width: 33.33%;  
-  color: #777777;  
-}  
-.on{ 
-  color: #4682B4;  
-  border-bottom: 5rpx solid #4682B4;
-}  
-.swiper-box{ 
-  background-color: #f0f0f0;
-  display: block; 
-  height: 100%; 
-  width: 100%; 
-  overflow: hidden; 
-}  
-.swiper-box view{  
-    text-align: center;  
-} 
-
-.search{
-  display: flex;
-  background-color: #fff;
-  height: 100rpx;
-
-}
-.search-box{
-  display: flex;
+.search-head{
   margin: 20rpx;
-  margin-left: 40rpx;
-  width: 440rpx;
-  height: 60rpx;
-  background-color: #fff;
-  border: 1px solid #999;  
-  border-radius: 10rpx; 
-  
-}
-.search-icon{
-  margin-left: 20rpx;
-  margin-top: 10rpx;
-}
-.search-input{
-  width: 350rpx;
-  height: 60rpx;
-  margin-left: 10rpx;
-}
-.search-button{
-  width: 170rpx;
-  height: 65rpx;
-  margin-left: 30rpx;
-  margin-top: 20rpx;
-  padding-left: 30rpx;
-  line-height: 1.8;
-  background-color:#4682B4; 
-  color: #fff;
-  border: 1px solid #4682B4;
-  box-shadow: 2px 1px 1px #cccccc;
-  font-size: 34rpx;
-}
-.search-button-hover{
-  background-color: #4169E1;
-  opacity: 0.7;
-}
-.tag{
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-  height: 100rpx;
-}
-.tag-button{
-  background-color: #fff;
-  width: 170rpx;
-  height: 80rpx;
-  margin-top: 10rpx;
-  margin-left: 8rpx;
-  border: 1px solid #eee;
-  border-radius: 10rpx;
-  display: flex;
-  flex-direction: row;
-  font-size: 30rpx;
-  line-height: 2.7;
-  padding-left: 10rpx;
-  padding-right: 10rpx;
-  color: #666;
-}
-.tag-icon{
-  margin-top: 12rpx;
-  margin-right: 10rpx;
-  width: 55rpx;
-  height: 55rpx;
-}
-.tag-button-hover{
-  background-color:	#B0C4DE;
-  border: 1px solid #778899;
-  border-radius: 10rpx;
-  opacity: 0.5;
-  color: #000;
+  line-height: 80rpx;
+  color: #555;
+  font-size: 45rpx;
 }
 .post{
   background-color: #fff;
@@ -319,7 +219,3 @@ page{
   height: 1rpx;
   background-color: #AAA;
 }
-.scroll-views{
-  height: 100%;
-}
-

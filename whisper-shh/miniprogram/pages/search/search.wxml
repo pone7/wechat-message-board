@@ -1,8 +1,8 @@
-<!--pages/myPosts/myPosts.wxml-->
+<!--miniprogram/pages/search/search.wxml-->
 <view class='container'>
-  <view class='myPosts-head'>My posts</view>
-  <view class='myPosts-content'>
-  <view class="post" wx:for="{{dataset}}">
+  <view class='search-head'>Search result </view>
+  <view class='search-content'>
+    <view class="post" wx:for="{{dataset}}">
         <view class="post-head">
           <view class='post-nickname'>
             <button class='nickname-button' hover-class='nickname-button-hover'>{{item.nickName}}</button>
@@ -19,8 +19,11 @@
         </view>
         <view class="post-button">
           <view class='post-blank'></view>
+
           <button class="comment" bindtap='showComment' hover-class='comment-hover'>
             <image class='comment-icon' src='/images/comment.png'></image></button>
+          <button class='report' hover-class='report-hover' bindtap='goReportPage'>
+            <image class='report-icon' src='/images/report.png'></image></button>
         </view>
         <view class="{{isFold?'post-comment-hide':'post-comment-show'}}">
           <text class='comment-title'>Comments</text>

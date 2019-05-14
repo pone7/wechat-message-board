@@ -11,18 +11,18 @@
     <view class='tag-head'>
       <text>Add tag</text>
     </view>
-    <view class='tag-row1'>
-      <button class='tag-button' hover-class='tag-button-hover' bindtap='love'>
+    <view class='tag-row'>
+      <button class="{{isLove?'tag-love-selected':'tag-love'}}" bindtap='selectLove' hover-class='tag-button-hover'>
         <image class='tag-icon' src='/images/hash-red.png'></image>Love</button>
-      <button class='tag-button' hover-class='tag-button-hover' bindtap='life'>
+      <button class="{{isLife?'tag-life-selected':'tag-life'}}" bindtap='selectLife' hover-class='tag-button-hover'>
         <image class='tag-icon' src='/images/hash-yellow.png' ></image>Life</button>
-      <button class='tag-button' hover-class='tag-button-hover' bindtap='game'>
+      <button class="{{isGame?'tag-game-selected':'tag-game'}}" bindtap='selectGame' hover-class='tag-button-hover'>
         <image class='tag-icon' src='/images/hash-green.png'></image>Game</button>
     </view>
-    <view class='tag-row2'>
-      <button class='tag-button' hover-class='tag-button-hover' bindtap='study'>
+    <view class='tag-row'>
+      <button class="{{isStudy?'tag-study-selected':'tag-study'}}" bindtap='selectStudy' hover-class='tag-button-hover'>
         <image class='tag-icon' src='/images/hash-blue.png'></image>Study</button>
-      <button class='tag-button' hover-class='tag-button-hover'>
+      <button class="{{isNo?'tag-no-selected':'tag-no'}}" bindtap='selectNo' hover-class='tag-button-hover'>
         <image class='tag-icon' src='/images/hash-grey.png'></image>noTag</button>
     </view>
   </view>

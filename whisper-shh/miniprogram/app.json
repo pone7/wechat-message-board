@@ -4,20 +4,20 @@
     "pages/me/me",
     "pages/post/post",
     "pages/myPosts/myPosts",
-    "pages/message/message",
-    "pages/setting/setting",
     "pages/about/about",
-    "pages/report/report"
+    "pages/report/report",
+    "pages/reportpage/reportpage",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#9370DB",
+    "navigationBarBackgroundColor": "#4682B4",
     "navigationBarTitleText": "Whisper Shh",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#000",
-    "selectedColor": "#9370DB",
+    "selectedColor": "#4682B4",
     "borderStyle": "white",
     "list": [
       {

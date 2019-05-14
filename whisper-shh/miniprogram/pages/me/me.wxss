@@ -46,9 +46,9 @@ page{
   margin-top: 100rpx;
 }
 .meList-section{
+  height: 75rpx;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
-  padding-bottom: 20rpx;
   padding-top: 20rpx;
   display: flex;
   flex-direction: row;
@@ -63,4 +63,23 @@ page{
   width: 50rpx;
   height: 50rpx;
   margin-left: 20rpx;
+}
+.contact-button{
+  font-size:40rpx;
+  color: #555;
+  margin-left: 20rpx;
+  padding-left: 0rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.contact-button::after{
+  border: none;
+}
+.me-bottom{
+  margin-top: 140rpx;
+  text-align: center;
+}
+.bottom-text{
+  font-size: 30rpx;
+  color: #888;
 }

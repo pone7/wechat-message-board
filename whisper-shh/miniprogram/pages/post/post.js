@@ -1,7 +1,7 @@
 // pages/post/post.js
 const db = wx.cloud.database()
 const userInfo = db.collection('userInfo')
-var tags = new Array
+// var tags = new Array
 
 Page({
 
@@ -14,7 +14,15 @@ Page({
     message: '',
     nickName: '',
     imgUrl: '/images/picture-white.png',
-    tags: []
+    numLiked: 0,
+    isLove: false,
+    isLife: false,
+    isGame: false,
+    isStudy: false,
+    isNo: true,
+    tags: '',
+    comments: [],
+    isLike: false
   },
 
   /**
@@ -78,6 +86,7 @@ Page({
    */
   onShareAppMessage: function () {
 
+
   },
 
   handleMessage: function (event) {
@@ -92,28 +101,50 @@ Page({
     })
   },
 
-  love: function (event) {
-    if (tags.indexOf('#love') == -1) {
-      tags.push('#love')
-    }
+  selectLove(e) {
+    this.setData({
+      isLove: !this.data.isLove,
+      isLife: false,
+      isGame: false,
+      isStudy: false,
+      isNo: false,
+    })
   },
-
-  life: function (event) {
-    if (tags.indexOf('#life') == -1) {
-      tags.push('#life')
-    }
+  selectLife(e) {
+    this.setData({
+      isLife: !this.data.isLife,
+      isLove: false,
+      isGame: false,
+      isStudy: false,
+      isNo: false,
+    })
   },
-
-  game: function (event) {
-    if (tags.indexOf('#game') == -1) {
-      tags.push('#game')
-    }
+  selectGame(e) {
+    this.setData({
+      isGame: !this.data.isGame,
+      isLife: false,
+      isLove: false,
+      isStudy: false,
+      isNo: false,
+    })
   },
-
-  study: function (event) {
-    if (tags.indexOf('#study') == -1) {
-      tags.push('#study')
-    }
+  selectStudy(e) {
+    this.setData({
+      isStudy: !this.data.isStudy,
+      isLife: false,
+      isGame: false,
+      isLove: false,
+      isNo: false,
+    })
+  },
+  selectNo(e) {
+    this.setData({
+      isNo: !this.data.isNo,
+      isLife: false,
+      isGame: false,
+      isStudy: false,
+      isLove: false,
+    })
   },
 
   uploadPic: function (event) {
@@ -127,7 +158,43 @@ Page({
     })
   },
 
+  setTag: function(){
+    console.log('OK')
+    if (this.data.isLove) {
+      var tag = '#Love'
+      this.setData({
+        tags: tag
+      })
+    }
+    else if (this.data.isGame) {
+      var tag = '#Game'
+      this.setData({
+        tags: tag
+      })
+    }
+    else if (this.data.isStudy) {
+      var tag = '#Study'
+      this.setData({
+        tags: tag
+      })
+    }
+    else if (this.data.isLife) {
+      var tag = '#Life'
+      this.setData({
+        tags: tag
+      })
+    }
+    else{
+      this.setData({
+        tags: ''
+      })
+    }
+
+  },
+
   leaveMessage: function (event) {
+    this.setTag()
+    console.log(this.data.tags)
     if (this.data.message && this.data.nickName) {
       wx.showLoading({
         title: 'sending',
@@ -144,7 +211,15 @@ Page({
               nickName: this.data.nickName,
               imgUrl: res.fileID,
               date: new Date().toJSON(),
-              tags: tags
+              numLiked: 0,
+              isGame: this.data.isGame,
+              isLife: this.data.isLife,
+              isLove: this.data.isLove,
+              isStudy: this.data.isStudy,
+              isNo: this.data.isNo,
+              tags: this.data.tags,
+              comments: this.data.comments,
+              isLike: this.data.isLike
             },
             complete: res => {
               console.log(res)

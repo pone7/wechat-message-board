@@ -57,22 +57,73 @@ page{
   padding-left: 20rpx;
   padding-top: 20rpx;
   font-size: 40rpx;
-  color: 	#4B0082;
+  color: 	#000080;
 }
-.tag-row1{
+.tag-row{
   margin-top: 30rpx;
   display: flex;
   flex-direction: row;
 }
-.tag-row2{
-  margin-top: 30rpx;
-  margin-left: 90rpx;
-  margin-right: 120rpx;
-  display: flex;
-  flex-direction: row;
-}
-.tag-button{
+.tag-love{
   margin-left: 16rpx;
+  width: 170rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  font-size: 38rpx;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: row;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  color: #555;
+}
+.tag-love-selected{
+  margin-left: 16rpx;
+  width: 170rpx;
+  height: 70rpx;
+  border: 1px solid #DB639B;
+  border-radius: 10rpx;
+  background-color: #FFF0F5;
+  font-size: 38rpx;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: row;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  color: #DB639B;
+}
+.tag-life{
+  margin-left: 20rpx;
+  width: 170rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  font-size: 38rpx;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: row;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  color: #555;
+}
+.tag-life-selected{
+  margin-left: 20rpx;
+  width: 170rpx;
+  height: 70rpx;
+  border: 1px solid #EFB336;
+  border-radius: 10rpx;
+  background-color: #FFFFE0;
+  font-size: 38rpx;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: row;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  color: #EFB336;
+}
+.tag-game{
+  margin-left: 20rpx;
   width: 190rpx;
   height: 70rpx;
   border-radius: 10rpx;
@@ -85,6 +136,83 @@ page{
   padding-top: 15rpx;
   color: #555;
 }
+.tag-game-selected{
+  margin-left: 20rpx;
+  width: 190rpx;
+  height: 70rpx;
+  border: 1px solid #7CBA59;
+  border-radius: 10rpx;
+  background-color: #F0FFF0;
+  font-size: 38rpx;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: row;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  color: #7CBA59;
+}
+.tag-study{
+  margin-left: 120rpx;
+  width: 190rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  font-size: 38rpx;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: row;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  color: #555;
+}
+.tag-study-selected{
+  margin-left: 120rpx;
+  width: 190rpx;
+  height: 70rpx;
+  border: 1px solid #17ABE3;
+  border-radius: 10rpx;
+  background-color: #F0FFFF;
+  font-size: 38rpx;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: row;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  color: #17ABE3;
+}
+.tag-no{
+  margin-right: 120rpx;
+  width: 190rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  font-size: 38rpx;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: row;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  color: #555;
+}
+.tag-no-selected{
+  margin-right: 120rpx;
+  width: 190rpx;
+  height: 70rpx;
+  border: 1px solid #555;
+  border-radius: 10rpx;
+  background-color: #ccc;
+  font-size: 38rpx;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: row;
+  padding-left: 15rpx;
+  padding-top: 15rpx;
+  color: #555;
+}
+.tag-button-hover{
+  background-color: #f0f0f0;
+}
+
 .tag-icon{
   width: 40rpx;
   height: 40rpx;
@@ -99,7 +227,7 @@ page{
 .send-button{
   width: 670rpx;
   height: 95rpx;
-  background-color: #9370DB;
+  background-color: #4682B4;
   color: #fff;
   font-size: 40rpx;
   letter-spacing: 1rpx;

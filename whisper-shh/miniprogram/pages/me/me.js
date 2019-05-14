@@ -1,6 +1,5 @@
 const db = wx.cloud.database()
 const userInfo = db.collection('userInfo')
-
 Page({
 
   /**
@@ -11,7 +10,8 @@ Page({
       nickName: "Log in",
       avatarUrl: '../../images/account.png'
     },
-    openid: ''
+    userInfo: [],
+    openid: '',
   },
 
   /**
@@ -73,12 +73,16 @@ Page({
     wx.cloud.callFunction({
       name: 'login',
       complete: res => {
-        console.log(res)
         this.setData({
           openid: res.result.openid,
-          user: result.detail.userInfo
+          user: result.detail.userInfo,
         })
       }
+    })
+    userInfo.get().then(res => {
+      this.setData({
+        userInfo: res.data
+      })
     })
     var count = userInfo.where({
       _openid: this.openid
@@ -94,5 +98,5 @@ Page({
       } else {
       }
     })
-  }
+  },
 })

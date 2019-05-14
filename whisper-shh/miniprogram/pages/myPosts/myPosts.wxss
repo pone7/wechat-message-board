@@ -1,1 +1,221 @@
-/* pages/myPosts/myPosts.wxss */
+page{
+  background-color: #f0f0f0
+}
+.myPosts-head{
+  margin: 20rpx;
+  line-height: 80rpx;
+  color: #555;
+  font-size: 45rpx;
+}
+.post{
+  background-color: #fff;
+  margin: 50rpx;
+  border: 2px solid #CCC;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.post-head{
+  margin-top: 20rpx;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+}
+.post-nickname{
+  margin-left: 20rpx;
+}
+.nickname-button{
+  width: 340rpx;
+  height: 60rpx;
+  font-size: 34rpx;
+  text-align: left;
+  padding-left: 20rpx;
+  color: #555;
+  background-color: #fff;
+}
+.nickname-button::after{
+  border: none;
+}
+.nickname-button-hover{
+  opacity: 0.7;
+}
+.post-time{
+  width: 260rpx;
+  height: 60rpx;
+  line-height: 90rpx;
+  font-size: 34rpx;
+  color: #555;
+  text-align-last: right;
+
+}
+.post-tag{
+  width: 150rpx;
+  color: #4682B4;
+  font-size: 36rpx;
+  margin-left: 40rpx;
+  text-align-last: left;
+}
+.post-content{
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  font-size: 35rpx;
+  text-align-last: left;
+  color: #555;
+}
+.post-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.post-image-image{
+  width: 450rpx;
+}
+
+.post-button{
+  margin-top: 20rpx;
+  display: flex;
+}
+.post-blank{
+  width: 410rpx;
+}
+.like-notLiked{
+  width:110rpx;
+  height:60rpx;
+  background-color: #fff; 
+  padding-top: 10rpx;
+  text-align-last: right;
+  line-height: 45rpx;
+  color: #555;
+  font-size: 35rpx;
+  background-image: url('https://img3.doubanio.com/view/photo/l/92DFkjhbgzoNnb6bVrC7EA/172395594/x2554907160.jpg');
+  background-size: 40rpx;
+  background-repeat: no-repeat;
+  background-position-x: 20rpx;
+  background-position-y: center;
+}
+.like-notLiked::after{
+  border: none;
+}
+.like-liked{
+  width:110rpx;
+  height:60rpx;
+  background-color: #fff; 
+  padding-top: 10rpx;
+  text-align-last: right;
+  line-height: 45rpx;
+  color: #555;
+  font-size: 35rpx;
+  background-image: url('https://img1.doubanio.com/view/photo/l/MJ4kJWZ4zpJFLnjQ6KWQ1g/172395594/x2554907159.jpg');
+  background-size: 40rpx;
+  background-repeat: no-repeat;
+  background-position-x: 20rpx;
+  background-position-y: center;
+}
+.like-liked::after{
+  border: none;
+}
+.like-num{
+  color: #777;
+  font-size: 32rpx;
+  padding-left: 35rpx;
+}
+.comment{
+  width: 80rpx;
+  height: 60rpx;
+  background-color: #fff;
+  line-height: 1;
+  padding-top: 13rpx;
+  padding-left: 20rpx;
+}
+.comment::after{
+  border: none;
+}
+.comment-hover{
+  opacity: 0.7;
+}
+.comment-icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.report{
+  width:80rpx;
+  height:60rpx;
+  background-color: #fff; 
+  padding-top: 13rpx;
+  line-height: 1;
+  color: #555;
+  font-size: 35rpx;
+  padding-left: 20rpx;
+}
+.report::after{
+  border: none;
+}
+.report-hover{
+  opacity: 0.7;
+}
+.report-icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.post-comment-hide{
+  display: none;
+}
+.post-comment-show{
+  margin: 10rpx;
+  border-radius: 10rpx;
+  background-color: #F5F8F8;
+  display: flex;
+  flex-direction: column;
+}
+.comment-title{
+  text-align: left;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  color: #555;
+
+}
+.comment-text{
+  text-align: left;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+  color: #555;
+}
+.comment-input-box{
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30rpx;
+}
+.comment-input{
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  width: 440rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  font-size: 34rpx;
+  border: 1px solid #888;
+  border-radius: 15rpx;
+  text-align: left;
+  padding-left: 20rpx;
+}
+.comment-send{
+  margin-top: 20rpx;
+  margin-right: 10rpx;
+  width: 120rpx;
+  height: 55rpx;
+  color: #fff;
+  background-color: #4682B4;
+  border: 1px solid #4682B4;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  padding-left: 20rpx;
+}
+.comment-send-hover{
+  opacity: 0.7;
+}
+.line{
+  margin:10rpx;
+  height: 1rpx;
+  background-color: #AAA;
+}

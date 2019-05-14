@@ -4,20 +4,19 @@
   <view class="search">
     <view class='search-box'>
       <icon class="search-icon" size='20' type='search'></icon>
-      <input class="search-input"  placeholder=' search content'></input>
+      <input class="search-input"  placeholder=' search content' bindinput='getContent'></input>
     </view>
     <view class='search-btn'>
-      <button class='search-button' hover-class='search-button-hover'>Search</button>
+      <button class='search-button' hover-class='search-button-hover' bindtap='search'>Search</button>
     </view>   
   </view>
   <view class="swiper-tab">  
     <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">Latest</view>  
     <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">Hottest</view>  
     <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">Tags</view>  
-</view>  
+</view> 
+
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
-
-
     <!-- Latest -->
     <swiper-item>
     <scroll-view scroll-x="false" scroll-y="true" class='scroll-views'>
@@ -38,19 +37,22 @@
         </view>
         <view class="post-button">
           <view class='post-blank'></view>
-          <button class="{{isLiked?'like-liked':'like-notLiked'}}" bindtap='tapLike' >
-            <text>1</text>
+          <button class="{{item.isLike?'like-liked':'like-notLiked'}}" id='{{item._id}}' bindtap='tapLike'>
+            <text class='like-num'>{{item.numLiked}}</text>
           </button>
           <button class="comment" bindtap='showComment' hover-class='comment-hover'>
             <image class='comment-icon' src='/images/comment.png'></image></button>
-          <button class='report' hover-class='report-hover'>
+          <button class='report' hover-class='report-hover' bindtap='goReportPage'>
             <image class='report-icon' src='/images/report.png'></image></button>
         </view>
         <view class="{{isFold?'post-comment-hide':'post-comment-show'}}">
           <text class='comment-title'>Comments</text>
           <view class='line'></view>
-          <text class="comment-text">Example comment 1</text>
-          <input class='comment-input' placeholder='Comment...'></input> 
+          <text class="comment-text">{{item.comments}}</text>
+          <view class='comment-input-box'>
+            <input class='comment-input' placeholder='Comment...' bindinput='getComment'></input>
+            <button class='comment-send' hover-class='comment-send-hover' bindtap='sendComment' id='{{item._id}}'>Send</button>
+          </view> 
         </view>
       </view>
       </scroll-view>
@@ -58,23 +60,98 @@
 
     <!-- Hottest --> 
     <swiper-item>
+    <scroll-view scroll-x="false" scroll-y="true" class='scroll-views'>
+      <view class="post" wx:for="{{dataset2}}">
+        <view class="post-head">
+          <view class='post-nickname'>
+            <button class='nickname-button' hover-class='nickname-button-hover'>{{item.nickName}}</button>
+          </view>
+          <view class='post-time'>{{item.date}}</view>
+        </view>
+        <view class='line'></view>
+        <view class='post-tag'>{{item.tags}}
+        </view>
+        <view class="post-content">{{item.message}}
+        </view>
+        <view class='post-image'>
+	      <image class='post-image-image' src='{{item.imgUrl}}' mode="aspectFill"></image>
+        </view>
+        <view class="post-button">
+          <view class='post-blank'></view>
+          <button class="{{item.isLike?'like-liked':'like-notLiked'}}" id='{{item._id}}' bindtap='tapLike' >
+            <text class='like-num'>{{item.numLiked}}</text>
+          </button>
+          <button class="comment" bindtap='showComment' hover-class='comment-hover'>
+            <image class='comment-icon' src='/images/comment.png'></image></button>
+          <button class='report' hover-class='report-hover' bindtap='goReportPage'>
+            <image class='report-icon' src='/images/report.png'></image></button>
+        </view>
+        <view class="{{isFold?'post-comment-hide':'post-comment-show'}}">
+          <text class='comment-title'>Comments</text>
+          <view class='line'></view>
+          <text class="comment-text">{{item.comments}}</text>
+          <view class='comment-input-box'>
+            <input class='comment-input' placeholder='Comment...' bindinput='getComment'></input>
+            <button class='comment-send' hover-class='comment-send-hover' bindtap='sendComment' id='{{item._id}}'>Send</button>
+          </view> 
+        </view>
+      </view>
+      </scroll-view>
     </swiper-item>
+
     <!-- Tags -->  
     <swiper-item>
     <view class="tag">
-        <button class='tag-button' hover-class='tag-button-hover'>
+        <button class='tag-button' hover-class='tag-button-hover' bindtap='sortLove'>
           <image class='tag-icon' src='/images/love-red.png'></image>Love
         </button>
-        <button class='tag-button' hover-class='tag-button-hover'>
+        <button class='tag-button' hover-class='tag-button-hover' bindtap='sortLife'>
           <image class='tag-icon' src='/images/rest-yellow.png'></image>Life
         </button>
-        <button class='tag-button' hover-class='tag-button-hover'>
+        <button class='tag-button' hover-class='tag-button-hover' bindtap='sortGame'>
           <image class='tag-icon' src='/images/game-green.png'></image>Game
         </button>
-        <button class='tag-button' hover-class='tag-button-hover'>
+        <button class='tag-button' hover-class='tag-button-hover' bindtap='sortStudy'>
           <image class='tag-icon' src='/images/study-blue.png'></image>Study
         </button>
       </view>
+      <scroll-view scroll-x="false" scroll-y="true" class='scroll-views'>
+      <view class="post" wx:for="{{dataset3}}">
+        <view class="post-head">
+          <view class='post-nickname'>
+            <button class='nickname-button' hover-class='nickname-button-hover'>{{item.nickName}}</button>
+          </view>
+          <view class='post-time'>{{item.date}}</view>
+        </view>
+        <view class='line'></view>
+        <view class='post-tag'>{{item.tags}}
+        </view>
+        <view class="post-content">{{item.message}}
+        </view>
+        <view class='post-image'>
+	      <image class='post-image-image' src='{{item.imgUrl}}' mode="aspectFill"></image>
+        </view>
+        <view class="post-button">
+          <view class='post-blank'></view>
+          <button class="{{item.isLike?'like-liked':'like-notLiked'}}" id='{{item._id}}' bindtap='tapLike' >
+            <text class='like-num'>{{item.numLiked}}</text>
+          </button>
+          <button class="comment" bindtap='showComment' hover-class='comment-hover'>
+            <image class='comment-icon' src='/images/comment.png'></image></button>
+          <button class='report' hover-class='report-hover' bindtap='goReportPage'>
+            <image class='report-icon' src='/images/report.png'></image></button>
+        </view>
+        <view class="{{isFold?'post-comment-hide':'post-comment-show'}}">
+          <text class='comment-title'>Comments</text>
+          <view class='line'></view>
+          <text class="comment-text">{{item.comments}}</text>
+          <view class='comment-input-box'>
+            <input class='comment-input' placeholder='Comment...' bindinput='getComment'></input>
+            <button class='comment-send' hover-class='comment-send-hover' bindtap='sendComment' id='{{item._id}}'>Send</button>
+          </view> 
+        </view>
+      </view>
+      </scroll-view>
     </swiper-item>  
   </swiper>
 </view>

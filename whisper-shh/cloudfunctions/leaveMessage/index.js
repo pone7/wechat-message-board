@@ -15,7 +15,15 @@ exports.main = async (event, context) => {
       nickName: event.nickName,
       imgUrl: event.imgUrl,
       date: event.date,
-      tags: event.tags
+      numLiked: event.numLiked,
+      isLove: event.isLove,
+      isLife: event.isLife,
+      isGame: event.isGame,
+      isStudy: event.isStudy,
+      isNo: event.isNo,
+      tags: event.tags,
+      comments: event.comments,
+      isLike: event.isLike
     }
   })
 }

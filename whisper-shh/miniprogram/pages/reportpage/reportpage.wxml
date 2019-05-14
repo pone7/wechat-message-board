@@ -1,0 +1,21 @@
+
+<view class="top">
+<text class="title">Choose the type you want to report:</text>
+</view>
+<view class="container1">
+
+      <button class="{{isIllegal?'illegal-selected':'illegal'}}" bindtap="selectIllegal" hover-class="btn-hover"> Illegal Issues</button>
+      <button class="{{isViolence?'violence-selected':'violence'}}" bindtap="selectViolence" hover-class="btn-hover">Violence</button>
+</view>
+<view class="container2">
+       <button class="{{isAdv?'adv-selected':'adv'}}" bindtap="selectAdv" hover-class="btn-hover">Advertisement</button>
+       <button class="{{isPor?'por-selected':'por'}}" bindtap="selectPor" hover-class="btn-hover">Pornography</button>
+</view>
+<view class=" container3">
+        <button class="{{isPla?'pla-selected':'pla'}}" bindtap="selectPla" hover-class="btn-hover">Plagiarism</button>
+        <button class="{{isAttack?'attack-select':'attack'}}" bindtap="selectAttack" hover-class="btn-hover">Attacks</button>
+</view>
+
+<textarea class="input" placeholder="Some details..." bindinput='getContent'></textarea>
+
+<button class="submit" bindtap='submit'>Submit</button>

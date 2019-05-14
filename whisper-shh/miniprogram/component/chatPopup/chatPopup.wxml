@@ -1,3 +1,0 @@
-<view class='chat-popup' hidden='{{!showChatPopup}}'>
-  <view>chat popup</view>
-</view>

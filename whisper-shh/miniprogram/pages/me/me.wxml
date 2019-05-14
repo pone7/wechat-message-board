@@ -12,36 +12,30 @@
   </view>
   <!--me content list-->
   <view class="meList">
-    <navigator url="/pages/myPosts/myPosts" class="myPosts">
+    <navigator url="/pages/myPosts/myPosts?id={{userInfo[0]._openid}}" class="myPosts">
       <view class="meList-section">
-        <image class='like-icon' src="/images/posts.png" class="me-icon"></image>
-        <text class="me-title">My Posts</text>
+        <image src="/images/posts.png" class="me-icon"></image>
+        <text class="me-title" >My Posts</text>
       </view>
     </navigator>
-    <navigator url="/pages/message/message" class="myMessage">
-      <view class="meList-section">
-        <image src="/images/message.png" class="me-icon"></image>
-        <text class="me-title">My Message</text>
-      </view>
-    </navigator>
-    <navigator url="/pages/report/report" class="report">
+    <navigator url="/pages/reportpage/reportpage" class="report">
       <view class="meList-section">
         <image src="/images/report.png" class="me-icon"></image>
-        <text class="me-title">Reoprt</text>
+        <text class="me-title">Report & Suggestion</text>
       </view>
     </navigator>
-    <navigator url="/pages/setting/setting" class="setting">
-      <view class="meList-section">
-        <image src="/images/setting.png" class="me-icon"></image>
-        <text class="me-title">Setting</text>
-      </view>
-    </navigator>
+    <view class="meList-section">
+      <image src="/images/contact.png" class="me-icon"></image>
+      <button open-type='contact' class='contact-button'>Contact us</button>
+    </view>
     <navigator url="/pages/about/about" class='about'>
       <view class='meList-section'>
         <image src="/images/question.png" class="me-icon"></image>
         <text class="me-title">About</text>
       </view>
     </navigator>
-
+    <view class='me-bottom'>
+      <text class='bottom-text'>Whisper Shh Version 1.0</text>
+    </view>
   </view>
 </view>

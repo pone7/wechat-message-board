@@ -1,1 +1,45 @@
-/* pages/About/about.wxss */
+page{
+  background-color: #f0f0f0
+}
+.about-head{
+  margin: 30rpx;
+  height: 300rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding-top: 20rpx;
+  text-align: center;
+}
+.about-logo{
+  margin-top: 20rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+.about-title{
+  font-size: 40rpx;
+  font-weight: 500;
+  margin: 20rpx;
+  line-height: 80rpx;
+  color: #191970;
+}
+.about-text{
+  font-size: 36rpx;
+  margin: 20rpx;
+  color:#191970; 
+}
+.about-content{
+  margin: 30rpx;
+  height: 800rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding-top: 20rpx;
+}
+.developer-group{
+  font-size: 40rpx;
+  margin: 30rpx;
+  color:#191970; 
+}
+.developer{
+  font-size: 34rpx;
+  margin: 30rpx;
+  color:#191970;   
+}

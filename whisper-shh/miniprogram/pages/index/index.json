@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "chatPopup": "/component/chatPopup/chatPopup"
   },
   
   "enablePullDownRefresh": true
